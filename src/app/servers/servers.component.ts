@@ -16,6 +16,9 @@ export class ServersComponent implements OnInit {
   serverCreated = false;
   servers = ['Testserver', 'Testserver 2'];
 
+  secretTextVisible = true;
+  clickTimestamps = [];
+
   constructor() {
     setTimeout(() => {
       this.allowNewServer = true;
@@ -37,5 +40,10 @@ export class ServersComponent implements OnInit {
 
   onResetUsername() {
     this.username = '';
+  }
+
+  onRevealSecretText() {
+    this.secretTextVisible = !this.secretTextVisible;
+    this.clickTimestamps.push(this.clickTimestamps.length + 1);
   }
 }

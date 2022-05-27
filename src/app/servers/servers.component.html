@@ -31,4 +31,16 @@
   Reset
 </button>
 
+<button class="btn btn-primary" (click)="onRevealSecretText()">
+  Display Details
+</button>
+<p *ngIf="secretTextVisible">secret text</p>
+<div
+  *ngFor="let timestamp of clickTimestamps"
+  [ngStyle]="{ backgroundColor: timestamp >= 5 ? 'blue' : 'transparent' }"
+  [ngClass]="{ 'white-text': timestamp >= 5 }"
+>
+  {{ timestamp }}
+</div>
+
 <app-server *ngFor="let server of servers"></app-server>
